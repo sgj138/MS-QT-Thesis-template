@@ -1,0 +1,133 @@
+%%% LaTeX template for MS QT thesis at IISER Pune
+%%% Primary version created on 2025-01-05 
+
+\documentclass[12pt,a4paper]{report}
+
+\usepackage[
+  left=1.25in,
+  right=1in,
+  top=1in,
+  bottom=1in
+]{geometry}
+
+% ----------------------------
+% Line spacing
+% ----------------------------
+\usepackage{setspace}
+\onehalfspacing% 1.5 line spacing
+
+% ----------------------------
+% Fonts and encoding (pdfLaTeX-friendly)
+% ----------------------------
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+
+% ----------------------------
+% Math, figures, tables
+% ----------------------------
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{multirow}
+
+% ----------------------------
+% Captions and hyperlinks
+% ----------------------------
+\usepackage[font=small,labelfont=bf]{caption}
+\usepackage{subcaption}
+\usepackage[hidelinks]{hyperref}
+
+% ----------------------------
+% Better referencing
+% ----------------------------
+\usepackage[nameinlink,noabbrev]{cleveref}
+
+% ----------------------------
+% Floating control (optional but useful)
+% ----------------------------
+\usepackage{float}
+
+% ----------------------------
+% Bibliography (choose one approach)
+% Option A (recommended): biblatex
+% ----------------------------
+\usepackage[numbers,sort&compress]{natbib} % APS-like numeric citations
+
+% ----------------------------
+% Paragraph formatting (clean academic default)
+% ----------------------------
+\setlength{\parindent}{1.5em}
+\setlength{\parskip}{0pt}
+
+% ----------------------------
+% Title info (edit these)
+% ----------------------------
+\newcommand{\ThesisTitle}{Your Thesis Title}
+\newcommand{\AuthorName}{Abcdef Ghijkl Mnop}
+\newcommand{\DegreeName}{Master of Science in Quantum Technology}
+\newcommand{\InstituteName}{Indian Institute of Science Education and Research Pune}
+\newcommand{\InstituteAddressLineOne}{Dr.\ Homi Bhabha Road,}
+\newcommand{\InstituteAddressLineTwo}{Pashan, Pune 411008, INDIA.}
+\newcommand{\SupervisorName}{Prof.\ Qrstuv Wxyz}
+\newcommand{\SupervisorAddress}{Institute Address of Supervisor}
+\newcommand{\HostInstituteName}{Host Institute/Company Name}
+\newcommand{\SubmissionMonthYear}{April, 2026}
+\newcommand{\SubmissionYear}{2026}
+\newcommand{\AcademicYear}{2025--2026}
+\newcommand{\AdvisoryCommitteeMember}{Prof.\ Aaaaaa Bbbbbb}
+
+\begin{document}
+
+% ----------------------------
+% Front matter
+% ----------------------------
+\pagenumbering{roman}
+
+\input{frontmatter/titlepage}
+\input{frontmatter/certification}
+\input{frontmatter/declaration}
+\input{frontmatter/abstract}
+\input{frontmatter/acknowledgements}
+
+\tableofcontents
+\listoffigures
+\listoftables
+
+% ----------------------------
+% Main matter
+% ----------------------------
+\clearpage
+\pagenumbering{arabic}
+
+\chapter{Introduction}
+\input{chapters/01_introduction}
+
+\chapter{Background / Literature Review}
+\input{chapters/02_background}
+
+\chapter{Methods}
+\input{chapters/03_methods}
+
+\chapter{Results and Discussion}
+\input{chapters/04_results}
+
+\chapter{Conclusion and Future Work}
+\input{chapters/05_conclusion}
+
+% ----------------------------
+% Bibliography
+% ----------------------------
+\clearpage
+\bibliographystyle{apsrev4-2}
+\bibliography{references}
+
+% ----------------------------
+% Appendices (optional)
+% ----------------------------
+\appendix
+\chapter{Additional Derivations / Data}
+\input{backmatter/appendix_a}
+
+\end{document}
